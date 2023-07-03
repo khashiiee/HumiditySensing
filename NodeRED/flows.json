@@ -8,208 +8,6 @@
         "env": []
     },
     {
-        "id": "3b907434efcd5428",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "192.168.0.108",
-        "port": "1883",
-        "clientid": "node-red-mqtt-client",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "5",
-        "keepalive": "60",
-        "cleansession": false,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
-        "id": "96dc5a9d4c63b7c4",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "921fc6309ce8ca1d",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-dark",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#097479",
-                    "value": "#097479",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#097479",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#0eb8c0",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#555555",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#eeeeee",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#097479",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "d80588a74e967344",
-        "type": "ui_group",
-        "name": "Current",
-        "tab": "96dc5a9d4c63b7c4",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "e3f86ab1a683af8e",
-        "type": "ui_group",
-        "name": "Historical",
-        "tab": "96dc5a9d4c63b7c4",
-        "order": 2,
-        "disp": true,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "4038bec122c9c93e",
-        "type": "influxdb",
-        "hostname": "127.0.0.1",
-        "port": "8086",
-        "protocol": "http",
-        "database": "database",
-        "name": "InfluxDB",
-        "usetls": false,
-        "tls": "",
-        "influxdbVersion": "2.0",
-        "url": "http://192.168.0.108:8086",
-        "rejectUnauthorized": true
-    },
-    {
-        "id": "501649973043b6a7",
-        "type": "server",
-        "name": "Home Assistant",
-        "version": 5,
-        "addon": false,
-        "rejectUnauthorizedCerts": true,
-        "ha_boolean": "y|yes|true|on|home|open",
-        "connectionDelay": true,
-        "cacheJson": true,
-        "heartbeat": false,
-        "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
-        "statusSeparator": ": ",
-        "statusYear": "hidden",
-        "statusMonth": "short",
-        "statusDay": "numeric",
-        "statusHourCycle": "default",
-        "statusTimeFormat": "h:m",
-        "enableGlobalContextStore": false
-    },
-    {
-        "id": "99e90a9914ae2d01",
-        "type": "ui_group",
-        "name": "Humidifer",
-        "tab": "96dc5a9d4c63b7c4",
-        "order": 3,
-        "disp": true,
-        "width": "24",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "ca3950d610962f8c",
         "type": "mqtt in",
         "z": "f3b9146c8af039a5",
@@ -521,7 +319,7 @@
         "type": "function",
         "z": "f3b9146c8af039a5",
         "name": "",
-        "func": "return { payload: \"OFF\" };\n\n// Define the desired humidity range\nconst LOWER_HUMIDITY_LIMIT = 30;\nconst UPPER_HUMIDITY_LIMIT = 50;\n\n// Define the boundaries for humidity adjustment\nconst SIGNIFICANT_HUMIDITY_DIFF_MARGIN = 5;\n\n// Extract the data array from the input message\nconst dataArray = msg.payload;\n\n// Ensure that there are at least two data points\nif (dataArray.length < 2) {\n    node.warn(\"Not enough data points. Keeping the current state.\");\n    return { payload: 'OFF' };\n}\n\n// Calculate the rates of change for temperature and humidity over the last 5 minutes\nlet temperatureChangeSum = 0;\nlet humidityChangeSum = 0;\nlet numDataPoints = dataArray.length;\n\nfor (let i = 1; i < numDataPoints; i++) {\n    let timeDifference = (new Date(dataArray[i]._time) - new Date(dataArray[i-1]._time)) / (60 * 1000); // difference in minutes\n    temperatureChangeSum += (dataArray[i].temperature - dataArray[i-1].temperature) / timeDifference; // in °C/min\n    humidityChangeSum += (dataArray[i].humidity - dataArray[i-1].humidity) / timeDifference; // in %RH/min\n}\n\nlet temperatureChangeRate = temperatureChangeSum / (numDataPoints - 1);\nlet humidityChangeRate = humidityChangeSum / (numDataPoints - 1);\n\n// Use the latest data point for the current temperature and humidity\nlet latestDataPoint = dataArray[numDataPoints - 1];\n\n// Adjust the humidity limits based on the temperature and its rate of change\nlet lowerHumidityThreshold = LOWER_HUMIDITY_LIMIT;\nlet upperHumidityThreshold = UPPER_HUMIDITY_LIMIT;\n\nif (latestDataPoint.temperature > 25 || temperatureChangeRate > 0) {\n    lowerHumidityThreshold += 5;\n    upperHumidityThreshold += 5;\n} else if (latestDataPoint.temperature < 20 || temperatureChangeRate < 0) {\n    lowerHumidityThreshold -= 5;\n    upperHumidityThreshold -= 5;\n}\n\n// Adjust the thresholds further based on the time of day\nlet currentHour = new Date().getHours();\n\nif (currentHour >= 0 && currentHour < 6) { // If it's night time, adjust the humidity thresholds\n    lowerHumidityThreshold -= 2;\n    upperHumidityThreshold -= 2;\n} else if (currentHour >= 6 && currentHour < 18) { // If it's day time, adjust the humidity thresholds\n    lowerHumidityThreshold += 2;\n    upperHumidityThreshold += 2;\n}\n\n// Make a decision about the humidifier based on the adjusted thresholds\nlet decision;\n\nnode.warn({ latestDataPoint: latestDataPoint.humidity, temperatureChangeRate, humidityChangeRate, lowerHumidityThreshold, upperHumidityThreshold });\n\n\nif (latestDataPoint.humidity < lowerHumidityThreshold - SIGNIFICANT_HUMIDITY_DIFF_MARGIN) {\n    decision = 'CONTINUOUS'; // Turn on the humidifier continuously if the humidity is significantly below the lower limit\n} else if (latestDataPoint.humidity < lowerHumidityThreshold) {\n    decision = 'INTERMITTENT'; // Turn on the humidifier intermittently if the humidity is slightly below the lower limit\n} else if (latestDataPoint.humidity > lowerHumidityThreshold && latestDataPoint.humidity < (lowerHumidityThreshold + SIGNIFICANT_HUMIDITY_DIFF_MARGIN) && humidityChangeRate < 0) {\n    decision = \"INTERMITTENT\" // Turn on the humidifier intermittently if the humidity is only slightly within the range, and dropping\n} else if (latestDataPoint.humidity > upperHumidityThreshold) {\n    decision = 'OFF'; // Turn off the humidifier if the humidity is above the upper limit\n} else {\n    decision = 'OFF'; // Turn off the humidifier if the humidity is within the range and not dropping\n}\n\nnode.warn({ decision })\n\n// Return the decision as the output message\nreturn { payload: decision };\n",
+        "func": "\n// Define the desired humidity range\nconst LOWER_HUMIDITY_LIMIT = 30;\nconst UPPER_HUMIDITY_LIMIT = 50;\n\n// Define the boundaries for humidity adjustment\nconst SIGNIFICANT_HUMIDITY_DIFF_MARGIN = 5;\n\n// Extract the data array from the input message\nconst dataArray = msg.payload;\n\n// Ensure that there are at least two data points\nif (dataArray.length < 2) {\n    node.warn(\"Not enough data points. Keeping the current state.\");\n    return { payload: 'OFF' };\n}\n\n// Calculate the rates of change for temperature and humidity over the last 5 minutes\nlet temperatureChangeSum = 0;\nlet humidityChangeSum = 0;\nlet numDataPoints = dataArray.length;\n\nfor (let i = 1; i < numDataPoints; i++) {\n    let timeDifference = (new Date(dataArray[i]._time) - new Date(dataArray[i-1]._time)) / (60 * 1000); // difference in minutes\n    temperatureChangeSum += (dataArray[i].temperature - dataArray[i-1].temperature) / timeDifference; // in °C/min\n    humidityChangeSum += (dataArray[i].humidity - dataArray[i-1].humidity) / timeDifference; // in %RH/min\n}\n\nlet temperatureChangeRate = temperatureChangeSum / (numDataPoints - 1);\nlet humidityChangeRate = humidityChangeSum / (numDataPoints - 1);\n\n// Use the latest data point for the current temperature and humidity\nlet latestDataPoint = dataArray[numDataPoints - 1];\n\n// Adjust the humidity limits based on the temperature and its rate of change\nlet lowerHumidityThreshold = LOWER_HUMIDITY_LIMIT;\nlet upperHumidityThreshold = UPPER_HUMIDITY_LIMIT;\n\nif (latestDataPoint.temperature > 25 || temperatureChangeRate > 0) {\n    lowerHumidityThreshold += 5;\n    upperHumidityThreshold += 5;\n} else if (latestDataPoint.temperature < 20 || temperatureChangeRate < 0) {\n    lowerHumidityThreshold -= 5;\n    upperHumidityThreshold -= 5;\n}\n\n// Adjust the thresholds further based on the time of day\nlet currentHour = new Date().getHours();\n\nif (currentHour >= 0 && currentHour < 6) { // If it's night time, adjust the humidity thresholds\n    lowerHumidityThreshold -= 2;\n    upperHumidityThreshold -= 2;\n} else if (currentHour >= 6 && currentHour < 18) { // If it's day time, adjust the humidity thresholds\n    lowerHumidityThreshold += 2;\n    upperHumidityThreshold += 2;\n}\n\n// Make a decision about the humidifier based on the adjusted thresholds\nlet decision;\n\nnode.warn({ latestDataPoint: latestDataPoint.humidity, temperatureChangeRate, humidityChangeRate, lowerHumidityThreshold, upperHumidityThreshold });\n\n\nif (latestDataPoint.humidity < lowerHumidityThreshold - SIGNIFICANT_HUMIDITY_DIFF_MARGIN) {\n    decision = 'CONTINUOUS'; // Turn on the humidifier continuously if the humidity is significantly below the lower limit\n} else if (latestDataPoint.humidity < lowerHumidityThreshold) {\n    decision = 'INTERMITTENT'; // Turn on the humidifier intermittently if the humidity is slightly below the lower limit\n} else if (latestDataPoint.humidity > lowerHumidityThreshold && latestDataPoint.humidity < (lowerHumidityThreshold + SIGNIFICANT_HUMIDITY_DIFF_MARGIN) && humidityChangeRate < 0) {\n    decision = \"INTERMITTENT\" // Turn on the humidifier intermittently if the humidity is only slightly within the range, and dropping\n} else if (latestDataPoint.humidity > upperHumidityThreshold) {\n    decision = 'OFF'; // Turn off the humidifier if the humidity is above the upper limit\n} else {\n    decision = 'OFF'; // Turn off the humidifier if the humidity is within the range and not dropping\n}\n\nnode.warn({ decision })\n\n// Return the decision as the output message\nreturn { payload: decision };\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -928,5 +726,109 @@
         "x": 1160,
         "y": 620,
         "wires": []
+    },
+    {
+        "id": "3b907434efcd5428",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.108",
+        "port": "1883",
+        "clientid": "node-red-mqtt-client",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d80588a74e967344",
+        "type": "ui_group",
+        "name": "Current",
+        "tab": "96dc5a9d4c63b7c4",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3f86ab1a683af8e",
+        "type": "ui_group",
+        "name": "Historical",
+        "tab": "96dc5a9d4c63b7c4",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4038bec122c9c93e",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://192.168.0.108:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "501649973043b6a7",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    },
+    {
+        "id": "99e90a9914ae2d01",
+        "type": "ui_group",
+        "name": "Humidifer",
+        "tab": "96dc5a9d4c63b7c4",
+        "order": 3,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "96dc5a9d4c63b7c4",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     }
 ]
