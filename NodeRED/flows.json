@@ -1,0 +1,932 @@
+[
+    {
+        "id": "f3b9146c8af039a5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3b907434efcd5428",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.108",
+        "port": "1883",
+        "clientid": "node-red-mqtt-client",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "96dc5a9d4c63b7c4",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "921fc6309ce8ca1d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d80588a74e967344",
+        "type": "ui_group",
+        "name": "Current",
+        "tab": "96dc5a9d4c63b7c4",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3f86ab1a683af8e",
+        "type": "ui_group",
+        "name": "Historical",
+        "tab": "96dc5a9d4c63b7c4",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4038bec122c9c93e",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://192.168.0.108:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "501649973043b6a7",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    },
+    {
+        "id": "99e90a9914ae2d01",
+        "type": "ui_group",
+        "name": "Humidifer",
+        "tab": "96dc5a9d4c63b7c4",
+        "order": 3,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ca3950d610962f8c",
+        "type": "mqtt in",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "topic": "home/livingroom/sensor",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3b907434efcd5428",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 910,
+        "y": 540,
+        "wires": [
+            [
+                "fbef84b25f8d36f0",
+                "e04c144332f89ade"
+            ]
+        ]
+    },
+    {
+        "id": "fbef84b25f8d36f0",
+        "type": "json",
+        "z": "f3b9146c8af039a5",
+        "name": "Parse into JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 1190,
+        "y": 540,
+        "wires": [
+            [
+                "f6c479aec17c66a0",
+                "c23b08865163955a"
+            ]
+        ]
+    },
+    {
+        "id": "f6c479aec17c66a0",
+        "type": "split",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "topic",
+        "x": 1410,
+        "y": 540,
+        "wires": [
+            [
+                "3806d2371b286555"
+            ]
+        ]
+    },
+    {
+        "id": "575e0205c01acdce",
+        "type": "ui_gauge",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "group": "d80588a74e967344",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 1940,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "3806d2371b286555",
+        "type": "switch",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "humidity",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperature",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1590,
+        "y": 540,
+        "wires": [
+            [
+                "575e0205c01acdce",
+                "efd2ac757058d93c"
+            ],
+            [
+                "d2c5cc6d0c06547f",
+                "992f997b909c14b3"
+            ]
+        ],
+        "outputLabels": [
+            "Humidity",
+            "Temperature"
+        ]
+    },
+    {
+        "id": "d2c5cc6d0c06547f",
+        "type": "ui_gauge",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "group": "d80588a74e967344",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "50",
+        "colors": [
+            "#00faaf",
+            "#32e600",
+            "#ea5d5d"
+        ],
+        "seg1": "20",
+        "seg2": "35",
+        "diff": false,
+        "className": "",
+        "x": 1950,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "efd2ac757058d93c",
+        "type": "ui_chart",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "group": "e3f86ab1a683af8e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "6",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#0fafff",
+            "#ff7f0e",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1940,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "992f997b909c14b3",
+        "type": "ui_chart",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "group": "e3f86ab1a683af8e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "6",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#f58b29",
+            "#ff7f0e",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1950,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "227e89a07e61e4f6",
+        "type": "inject",
+        "z": "f3b9146c8af039a5",
+        "name": "Run every 5 minutes",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 900,
+        "y": 860,
+        "wires": [
+            [
+                "5fe42e7c42272374"
+            ]
+        ]
+    },
+    {
+        "id": "c23b08865163955a",
+        "type": "influxdb out",
+        "z": "f3b9146c8af039a5",
+        "influxdb": "4038bec122c9c93e",
+        "name": "Write to InfluxDB",
+        "measurement": "dht11",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Home",
+        "bucket": "nodered",
+        "x": 1450,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5fe42e7c42272374",
+        "type": "influxdb in",
+        "z": "f3b9146c8af039a5",
+        "influxdb": "4038bec122c9c93e",
+        "name": "Get Data",
+        "query": "from(bucket: \"nodered\")\n  |> range(start: -5m)\n  |> filter(fn: (r) => r._measurement == \"dht11\")\n  |> aggregateWindow(every: 1m, fn: mean)\n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Home",
+        "x": 1120,
+        "y": 860,
+        "wires": [
+            [
+                "d420db5ba2188ed3"
+            ]
+        ]
+    },
+    {
+        "id": "d420db5ba2188ed3",
+        "type": "function",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "func": "return { payload: \"OFF\" };\n\n// Define the desired humidity range\nconst LOWER_HUMIDITY_LIMIT = 30;\nconst UPPER_HUMIDITY_LIMIT = 50;\n\n// Define the boundaries for humidity adjustment\nconst SIGNIFICANT_HUMIDITY_DIFF_MARGIN = 5;\n\n// Extract the data array from the input message\nconst dataArray = msg.payload;\n\n// Ensure that there are at least two data points\nif (dataArray.length < 2) {\n    node.warn(\"Not enough data points. Keeping the current state.\");\n    return { payload: 'OFF' };\n}\n\n// Calculate the rates of change for temperature and humidity over the last 5 minutes\nlet temperatureChangeSum = 0;\nlet humidityChangeSum = 0;\nlet numDataPoints = dataArray.length;\n\nfor (let i = 1; i < numDataPoints; i++) {\n    let timeDifference = (new Date(dataArray[i]._time) - new Date(dataArray[i-1]._time)) / (60 * 1000); // difference in minutes\n    temperatureChangeSum += (dataArray[i].temperature - dataArray[i-1].temperature) / timeDifference; // in °C/min\n    humidityChangeSum += (dataArray[i].humidity - dataArray[i-1].humidity) / timeDifference; // in %RH/min\n}\n\nlet temperatureChangeRate = temperatureChangeSum / (numDataPoints - 1);\nlet humidityChangeRate = humidityChangeSum / (numDataPoints - 1);\n\n// Use the latest data point for the current temperature and humidity\nlet latestDataPoint = dataArray[numDataPoints - 1];\n\n// Adjust the humidity limits based on the temperature and its rate of change\nlet lowerHumidityThreshold = LOWER_HUMIDITY_LIMIT;\nlet upperHumidityThreshold = UPPER_HUMIDITY_LIMIT;\n\nif (latestDataPoint.temperature > 25 || temperatureChangeRate > 0) {\n    lowerHumidityThreshold += 5;\n    upperHumidityThreshold += 5;\n} else if (latestDataPoint.temperature < 20 || temperatureChangeRate < 0) {\n    lowerHumidityThreshold -= 5;\n    upperHumidityThreshold -= 5;\n}\n\n// Adjust the thresholds further based on the time of day\nlet currentHour = new Date().getHours();\n\nif (currentHour >= 0 && currentHour < 6) { // If it's night time, adjust the humidity thresholds\n    lowerHumidityThreshold -= 2;\n    upperHumidityThreshold -= 2;\n} else if (currentHour >= 6 && currentHour < 18) { // If it's day time, adjust the humidity thresholds\n    lowerHumidityThreshold += 2;\n    upperHumidityThreshold += 2;\n}\n\n// Make a decision about the humidifier based on the adjusted thresholds\nlet decision;\n\nnode.warn({ latestDataPoint: latestDataPoint.humidity, temperatureChangeRate, humidityChangeRate, lowerHumidityThreshold, upperHumidityThreshold });\n\n\nif (latestDataPoint.humidity < lowerHumidityThreshold - SIGNIFICANT_HUMIDITY_DIFF_MARGIN) {\n    decision = 'CONTINUOUS'; // Turn on the humidifier continuously if the humidity is significantly below the lower limit\n} else if (latestDataPoint.humidity < lowerHumidityThreshold) {\n    decision = 'INTERMITTENT'; // Turn on the humidifier intermittently if the humidity is slightly below the lower limit\n} else if (latestDataPoint.humidity > lowerHumidityThreshold && latestDataPoint.humidity < (lowerHumidityThreshold + SIGNIFICANT_HUMIDITY_DIFF_MARGIN) && humidityChangeRate < 0) {\n    decision = \"INTERMITTENT\" // Turn on the humidifier intermittently if the humidity is only slightly within the range, and dropping\n} else if (latestDataPoint.humidity > upperHumidityThreshold) {\n    decision = 'OFF'; // Turn off the humidifier if the humidity is above the upper limit\n} else {\n    decision = 'OFF'; // Turn off the humidifier if the humidity is within the range and not dropping\n}\n\nnode.warn({ decision })\n\n// Return the decision as the output message\nreturn { payload: decision };\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 860,
+        "wires": [
+            [
+                "f1afd8344d8016f4"
+            ]
+        ]
+    },
+    {
+        "id": "f1afd8344d8016f4",
+        "type": "rbe",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1550,
+        "y": 860,
+        "wires": [
+            [
+                "0225b9f4526a2e72"
+            ]
+        ]
+    },
+    {
+        "id": "0225b9f4526a2e72",
+        "type": "switch",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "CONTINUOUS",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "INTERMITTENT",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "OFF",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "KEEP",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 1810,
+        "y": 860,
+        "wires": [
+            [
+                "90c7196bf447d53f"
+            ],
+            [
+                "577f518093b17bca"
+            ],
+            [
+                "0049ee6d149b60ef"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "90c7196bf447d53f",
+        "type": "api-call-service",
+        "z": "f3b9146c8af039a5",
+        "name": "Turn Humidifier On",
+        "server": "501649973043b6a7",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "select",
+        "service": "select_option",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "35324c70cd3263fd979ff81c6ef2a44b"
+        ],
+        "entityId": [
+            "select.msxh0_20121579137371290d2448e1e940fa43_spray"
+        ],
+        "data": "{\"option\":\"on\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2109,
+        "y": 773,
+        "wires": [
+            [
+                "45c0d0bae72b4b03"
+            ]
+        ]
+    },
+    {
+        "id": "0049ee6d149b60ef",
+        "type": "api-call-service",
+        "z": "f3b9146c8af039a5",
+        "name": "Turn Humidifier Off",
+        "server": "501649973043b6a7",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "select",
+        "service": "select_option",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "35324c70cd3263fd979ff81c6ef2a44b"
+        ],
+        "entityId": [
+            "select.msxh0_20121579137371290d2448e1e940fa43_spray"
+        ],
+        "data": "{\"option\":\"off\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2109,
+        "y": 933,
+        "wires": [
+            [
+                "900b4d3ef8219099"
+            ]
+        ]
+    },
+    {
+        "id": "45c0d0bae72b4b03",
+        "type": "api-call-service",
+        "z": "f3b9146c8af039a5",
+        "name": "Turn Blue!",
+        "server": "501649973043b6a7",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "35324c70cd3263fd979ff81c6ef2a44b"
+        ],
+        "entityId": [
+            "light.msxh0_20121579137371290d2448e1e940fa43"
+        ],
+        "data": "{\"color_name\":\"cyan\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2399,
+        "y": 773,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58637dcb9183d4ac",
+        "type": "api-get-history",
+        "z": "f3b9146c8af039a5",
+        "name": "Humidifier Uptime",
+        "server": "501649973043b6a7",
+        "version": 0,
+        "startdate": "",
+        "enddate": "",
+        "entityid": "select.msxh0_20121579137371290d2448e1e940fa43_spray",
+        "entityidtype": "is",
+        "useRelativeTime": true,
+        "relativeTime": "12 hours",
+        "flatten": true,
+        "output_type": "array",
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "x": 1110,
+        "y": 1060,
+        "wires": [
+            [
+                "ac1437440987d874"
+            ]
+        ]
+    },
+    {
+        "id": "ac1437440987d874",
+        "type": "function",
+        "z": "f3b9146c8af039a5",
+        "name": "Transform Data",
+        "func": "let stateChanges = msg.payload;\n\nfunction formatDate(date) {\n    return date.getTime();\n}\n\nconst states = {\n    \"on\": \"Continuous\",\n    \"eco\": \"Intermittent\",\n    \"off\": \"Off\",\n    \"unavailable\": \"Off\"\n}\n\nlet transformedData = stateChanges.map((change, i) => {\n    let timeRangeStart = new Date(change.last_changed);\n    let timeRangeEnd = i < stateChanges.length - 1 ? new Date(stateChanges[i+1].last_changed) : new Date();\n    return {\n        timeRange: [timeRangeStart, timeRangeEnd],\n        val: states[change.state]\n    };\n});\n\n\n\nlet dataItems = [{\n    group: \"Humidifier\",\n    data: [{\n        label: \"State\",\n        data: transformedData\n    }]\n}];\n\nreturn { payload: { dataItems } }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 1060,
+        "wires": [
+            [
+                "7e157824ef0c5495"
+            ]
+        ]
+    },
+    {
+        "id": "7e157824ef0c5495",
+        "type": "ui_timelines_chart",
+        "z": "f3b9146c8af039a5",
+        "group": "99e90a9914ae2d01",
+        "name": "Humidifer State Timeline",
+        "order": 2,
+        "label": "",
+        "width": 0,
+        "height": 0,
+        "lineColors": [
+            {
+                "statusColor": "#00e01a",
+                "statusValue": "Continuous"
+            },
+            {
+                "statusColor": "#fff700",
+                "statusValue": "Intermittent"
+            },
+            {
+                "statusColor": "#ff0000",
+                "statusValue": "Off"
+            }
+        ],
+        "xTickFormat": "HH:mm",
+        "startDateTime": "",
+        "endDateTime": "",
+        "maxLineHeight": 60,
+        "topMargin": 60,
+        "xAxisLabelsFontSize": "12",
+        "xAxisLabelslColor": "#ffffff",
+        "yAxisLabelsFontSize": "0",
+        "yAxisLabelslColor": "#ffffff",
+        "timeFormat": "%H:%M",
+        "segmentTooltipContent": "",
+        "resetZoomLabelFontSize": "8",
+        "resetZoomLabelColor": "#ffffff",
+        "enableAnimations": false,
+        "enableDateMarker": true,
+        "forwardInputMessages": false,
+        "x": 1670,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2091fe00cbf6e5b0",
+        "type": "inject",
+        "z": "f3b9146c8af039a5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 870,
+        "y": 1060,
+        "wires": [
+            [
+                "58637dcb9183d4ac"
+            ]
+        ]
+    },
+    {
+        "id": "577f518093b17bca",
+        "type": "api-call-service",
+        "z": "f3b9146c8af039a5",
+        "name": "Turn Humidifier On Intermittently",
+        "server": "501649973043b6a7",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "select",
+        "service": "select_option",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "35324c70cd3263fd979ff81c6ef2a44b"
+        ],
+        "entityId": [
+            "select.msxh0_20121579137371290d2448e1e940fa43_spray"
+        ],
+        "data": "{\"option\":\"eco\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2149,
+        "y": 853,
+        "wires": [
+            [
+                "f0c16bdabebb2527"
+            ]
+        ]
+    },
+    {
+        "id": "900b4d3ef8219099",
+        "type": "api-call-service",
+        "z": "f3b9146c8af039a5",
+        "name": "Turn Red!",
+        "server": "501649973043b6a7",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "35324c70cd3263fd979ff81c6ef2a44b"
+        ],
+        "entityId": [
+            "light.msxh0_20121579137371290d2448e1e940fa43"
+        ],
+        "data": "{\"color_name\":\"red\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2399,
+        "y": 933,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0c16bdabebb2527",
+        "type": "api-call-service",
+        "z": "f3b9146c8af039a5",
+        "name": "Turn Yellow!",
+        "server": "501649973043b6a7",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "35324c70cd3263fd979ff81c6ef2a44b"
+        ],
+        "entityId": [
+            "light.msxh0_20121579137371290d2448e1e940fa43"
+        ],
+        "data": "{\"color_name\":\"yellow\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2409,
+        "y": 853,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e04c144332f89ade",
+        "type": "debug",
+        "z": "f3b9146c8af039a5",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 620,
+        "wires": []
+    }
+]
